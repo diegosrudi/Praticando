@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>02 - Default Parameters</title>
+</head>
+<body>
+</body>
+
+<script>
+    function hello (name = 'Willian', surname = 'Justen') {
+        console.log(`Hello ${name} ${surname}! How are you?`);
+    }
+
+    hello();
+
+    // hello('Jonas');
+    // usa os parametros default
+
+    hello('Jonas', 'Mendes');
+
+    // usa os parametros passados
+
+    hello('Jonas');
+</script>
+</html>
