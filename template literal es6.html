@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .green {
+        color: green;
+        font-size: 25px;
+    }
+</style>
+<body>
+    
+</body>
+<script>
+    const article = {
+        title: "Aprendendo Template Literals",
+        intro: "Os template literals são uma funcionalidade poderosa do ES6 que facilita a criação de strings.",
+        body: "Eles permitem a interpolação de variáveis e expressões, além de suportarem strings multilinha.",
+        tags: ["JavaScript", "ES6", "Template Literals"]
+        author: 'João Silva'
+    }
+
+    function renderAuthor(nome) {
+        return (nome) ? nome : 'Anônimo'
+    }
+
+
+    const markup = `
+        <article>
+            <header>
+                <h1>${article.title}</h1>
+            </header>
+            <section>
+                <p>${article.intro}</p>
+                <p>${article.body}</p>
+            </section>
+            <footer>
+                <ul>
+                ${article.tags.map((tag) => `<li>${tag}</li>`.join(''))}
+                </ul>
+                <p>Autor: ${renderAuthor(article.author)}</p>
+            </footer>
+        </article>
+    `
+
+    document.body.innerHTML = markup;
+// usando template literals no HTML
+
+const city = 'São Paulo'
+const temperature = 25
+const estado = 'São Paulo'
+
+function green(template, ...values) {
+    return template.reduce((accumulator, part, i) => {
+        return `
+        ${accumulator}
+        <span class="green>${values[i - 1].toUpperCase()}</span>
+        ${part}
+        `
+    })
+}
+
+const saoPaulo = green`Eu moro em ${city} a cidade do estado ${estado} com temperatura ${temperature} graus.`
+
+document.body.innerHTML = saoPaulo
+
+
+</script>
+</html>

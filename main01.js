@@ -29,5 +29,9 @@ function mostraIdade({ idade }) {
 
 // Rest operator
 
-document.body.innerText = mostraIdade(user);
-// Output: 38
+const { name, ...rest } = user;
+
+document.body.innerText = JSON.stringify(rest);
+// Output: {"idade":38,"address":{"street":"Rua teste","number":176}}
+// rest operator - pega o restante das propriedades do objeto que não foram desestruturadas
+
