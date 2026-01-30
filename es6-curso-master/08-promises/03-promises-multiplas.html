@@ -19,12 +19,14 @@
 
     // Promise
     //     .all([currency, countries])
+    // resolve todas as promises
     //     .then(responses => {
     //         console.log(responses);
     //     })
 
     Promise
         .race([currency, countries])
+        // resolve a primeira promise e o resto é ignorado
         .then(responses => {
             console.log(responses);
         })

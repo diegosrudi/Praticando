@@ -15,8 +15,10 @@
 
     posts
         .then(data => data.json())
+        // transforma os dados em JSON
         .then(data => data.map(post => {
             console.log(post.title);
+            //map pegando somente os titulos dos posts
         }));
 </script>
 </html>
