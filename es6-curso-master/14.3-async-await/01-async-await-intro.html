@@ -31,6 +31,7 @@ Vantagens de usar async/await
 <script>
     async function getPosts() {
         const response = await fetch('https://willianjusten.com.br/search.json');
+        // espera a fetch ser resolvida
         const data = await response.json();
 
         return data.map(post => {
